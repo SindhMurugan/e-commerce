@@ -1,0 +1,44 @@
+.main{
+    height: 87vh;
+    width: 99vw;
+    padding: 10px 10px;
+    position: relative;
+    align-items: center;
+    /* margin-left: 60px; */
+}
+
+
+
+.main img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* opacity: 0.5; */
+    object-fit: fill;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slide-icons{
+    position: absolute;
+    font-size: 70px;
+    color: rgb(91, 89, 89);
+    bottom: 250px;
+    left: 16px;
+
+}
+
+
+.slide-icons2{
+    position: absolute;
+    font-size: 70px;
+    color: rgb(91, 89, 89);
+    bottom: 250px;
+    right: 36px;
+
+}
+
+
+
+

@@ -1,0 +1,203 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+
+   <div *ngIf="cardItems.length !=0 ; else emptyCard" >
+
+    <mat-card class="card-container">
+      <!-- <div class="mat-card"> -->
+      <div class="upper" *ngFor="let item of cardItems">
+        
+          <img [src]="[item.productImageUrl]" alt="">
+         
+          
+          <span>
+            <p style="font-size:14px">{{item.productName | slice:0:50}}...</p>
+           
+            <span class="price-details">
+              <b class="text-danger">&#8377;{{item.productPrice}}</b>
+              <p style="text-decoration: line-through; margin-left: 20px;color:rgb(0, 0, 0,0.3)">&#8377;{{item.productPrice + 100}}</p>
+              <!-- <p style="margin-left:30px;">Qty: {{item.quantity + 1}}</p> -->
+              <b style=" margin-left: 20px;color: rgb(4, 141, 50);">40% Off</b>
+              
+            </span>
+            <!--  <span ></span> -->
+            <div style="display:flex;flex-direction: row;">
+              <select name="demo" id="#" disabled>
+              <option selected="selected" value="one">Qty: 1</option>
+              </select>
+
+              <ul class="rating">
+              
+                <li><mat-icon>star</mat-icon></li>
+                <li><mat-icon>star</mat-icon></li>
+                <li><mat-icon>star</mat-icon></li>
+                <li><mat-icon>star</mat-icon></li>
+                <mat-icon>star_half</mat-icon>
+               
+          
+            
+            </ul>
+          </div>
+           
+            
+              <span class="offer"><mat-icon style="font-size: 15px;">check_circle_outline</mat-icon><p>Offer Applied</p></span>
+              <div style="
+              margin-left: -75px;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+          ">
+         
+                <button  mat-button style="margin-left: 70px;" (click)="removeItem(item)"><mat-icon style="font-size: 20px;" >delete_outline</mat-icon>Remove
+                </button>
+                
+                <button  mat-button style="margin-right: 70px;" class="wishlist" (click)="moveToWishList(item)"><mat-icon  style="font-size: 20px;">favorite_border</mat-icon>Move to wishlist</button>
+              </div>
+              <!-- <button  mat-button style="margin-left: 70px;"><mat-icon style="font-size: 15px;">check_circle_outline</mat-icon><p></p>Offer Applied
+              </button> -->
+              
+          </span>
+         
+          
+        </div>
+       
+          
+
+      <!-- </div> -->
+      <!-- <div class="lower">
+          <mat-card-title>{{product.productShortName}}</mat-card-title>
+          <p> <span class="text-danger ">&#8377;{{product.productPrice}}</span><del class="ms-1">&#8377;{{product.productPrice}}</del></p>
+          <span class="text-success">35% off</span>
+          <ul class="rating">
+              
+              <li><mat-icon>star</mat-icon></li>
+              <li><mat-icon>star</mat-icon></li>
+              <li><mat-icon>star</mat-icon></li>
+              <li><mat-icon>star</mat-icon></li>
+              <mat-icon>star_half</mat-icon>
+              <button mat-button class="bg-primary text-white" (click)="addToCard(product)">Add To Card</button>
+        
+          
+          </ul>
+          
+      </div> -->
+     
+  </mat-card>
+  <mat-card style="padding: 10px;" class="card-container">
+   
+      <p style=" font-size: 14px;
+      font-weight: bold;margin-left: 10px;">Price Details</p>
+      <div class="price-details">
+        <span>
+          <p>Total MRP</p>
+          <p>Saving on MRP</p>
+          <p>Sub Total</p>
+          <p>Shipping Charge</p>
+         
+        </span>
+        
+        <span>
+          <p>&#8377;{{price}}</p>
+          <p style="color: rgb(4, 141, 50);">-&#8377;100</p>
+          <p>&#8377;{{price-1000}}</p>
+          <p style="color:rgb(4, 141, 50);">Free</p>
+         
+        </span>
+        <!-- <span style="padding-top: 10px;">
+         <p>Price ({{cardItems.length}} items)</p><p>&#8377;{{price}}</p>
+        </span>
+        <span style="padding-bottom: 10px;">
+          <p>discount</p><p>-1000</p>
+         </span >
+        <hr>
+        <span style="padding: 10px 0px;"><p>Total Amount</p>&#8377;{{price-1000}}</span>
+        <hr>
+        <span style="padding-top: 10px;">
+          <p>{{price-1000}}</p>
+          <button class="btn bg-warning " (click)="redirectToSucessfull()" >Please Order</button>
+        </span> -->
+        
+      </div>
+      <hr>
+      <span style="display:flex;flex-direction: row;justify-content: space-between;margin: 0 10px;"> <p style=" font-size: 14px;
+        font-weight: bold;">Order Total</p> <p style=" font-size: 14px;
+        font-weight: bold;">&#8377;{{price-1000}}</p></span>
+  </mat-card>
+    <!-- <div  class="container">
+        <div class="remove-all">
+          <span>Your Card</span>
+          <span class="text-danger">Remove All</span>
+        </div>
+        <div class="card-container" *ngFor="let item of cardItems">
+          <div class="left">
+            <div>
+            <img [src]="[item.productImageUrl]" alt="">
+        </div>
+        <div>
+            <div class="product-details">
+              <span>{{item.productName | slice:0:40}}...</span>
+             
+              <p><span class="text-danger">&#8377;{{item.productPrice}} </span><span style="margin-left:30px;">Qty: {{item.quantity + 1}}</span></p>
+              <ul class="rating">
+                      
+                <li><mat-icon>star</mat-icon></li>
+                <li><mat-icon>star</mat-icon></li>
+                <li><mat-icon>star</mat-icon></li>
+                <li><mat-icon>star</mat-icon></li>
+                <mat-icon>star_half</mat-icon>
+               
+          
+            
+            </ul>
+            </div>
+          </div>
+        </div>
+          
+      
+      
+         
+         
+        </div>
+        <div class="price-details">
+          <h6>Price Details</h6>
+            <span style="padding-top: 10px;">
+             <p>Price ({{cardItems.length}} items)</p><p>&#8377;{{price}}</p>
+            </span>
+            <span style="padding-bottom: 10px;">
+              <p>discount</p><p>-1000</p>
+             </span >
+            <hr>
+            <span style="padding: 10px 0px;"><p>Total Amount</p>&#8377;{{price-1000}}</span>
+            <hr>
+            <span style="padding-top: 10px;">
+              <p>{{price-1000}}</p>
+              <button class="btn bg-warning " (click)="redirectToSucessfull()" >Please Order</button>
+            </span>
+            
+          </div>
+      </div> -->
+      <div class="placeOrder">
+        <p style=" font-size: 14px;
+        font-weight: bold;padding-left: 20px;">&#8377;{{price-1000}}</p>
+        <button class="btn bg-primary text-white " id="order-btn" (click)="redirectToSucessfull()" >Please Order</button>
+      </div>
+    </div>
+
+      <ng-template #emptyCard>
+        <div  class="empty-card">
+          <mat-icon>add_shopping_cart</mat-icon>
+          <p>Your card is empty </p>
+        </div>
+      </ng-template>
+    
+  </body>
+  </html>
+  

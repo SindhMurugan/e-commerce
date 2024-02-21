@@ -1,0 +1,53 @@
+
+    <div class="container">
+        <div class="left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Shipping_Flat_Icon_GIF_Animation.gif" alt="My cool gif">
+            <h4 style="margin-top: 25px;">Welcome</h4>
+            <p>You are 30 seconds away from compleating your order!</p>
+            <button class="btn bg-light text-dark" id="backBtn" (click)="goBack()">Go back</button>
+        </div>
+
+      
+        <div class="template-form">
+            
+            <form #addressForm="ngForm" (ngSubmit)="submit(addressForm)">
+                <h5>Delivery Details</h5>
+                <div>
+                    <!--  [ngStyle]="{'border':firstname.valid?'border: 2px solid rgb(0, 0, 0 ,0.2)':'border: 2px solid red'}" -->
+                  
+                    <p><input type="text" id="firstname" name="firstname" placeholder="First Name"   required ngModel></p>
+
+                  
+                    <p style="margin-left: 30px;"><input type="text" id="lastname" name="lastname" placeholder="lastname" ngModel required></p>
+                   
+                   
+                    
+                </div>
+                <div>
+                    <p><input type="text" id="city" name="city" placeholder="City" ngModel required></p>
+                    <p style="margin-left: 30px;"><input type="number" id="zip" name="zip" placeholder="Zip" ngModel required></p>
+                    
+                    
+                </div>
+                <div>
+                    <p> <input type="text" id="address" name="address" placeholder="Address" ngModel required></p>
+                    <p style="margin-left: 30px;"> <input type="text" id="email" name="email" placeholder="email" ngModel required email></p>
+                   
+                   
+                </div>
+                
+                
+                    <button class="btn btn-primary"  [disabled]="!addressForm.valid">Please Order</button>
+                
+                 
+            
+            </form>
+        </div>
+       
+    </div>
+
+    <!-- <div class="left">
+       
+       
+    </div> -->
+

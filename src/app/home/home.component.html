@@ -1,0 +1,46 @@
+<!-- <div class="container" > -->
+    <!-- <div class="container" *ngFor="let product of productData">
+        <div class="upper">
+            <img [src]="[product.productImageUrl]" alt="">
+           <p>{{productData[0]}}</p>
+        </div>
+    </div> -->
+
+   
+<!-- </div> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <mat-card *ngFor="let product of productData | filterCard:filterData">
+        <div class="upper">
+            <img [src]="[product.productImageUrl]" alt="">
+        </div>
+        <div class="lower">
+            <mat-card-title>{{product.productShortName}}{{filterData}}</mat-card-title>
+            <p> <span class="text-danger ">&#8377;{{product.productPrice}}</span><del class="ms-1">&#8377;{{product.productPrice}}</del></p>
+            <span class="text-success">35% off</span>
+            <ul class="rating">
+                
+                <li><mat-icon>star</mat-icon></li>
+                <li><mat-icon>star</mat-icon></li>
+                <li><mat-icon>star</mat-icon></li>
+                <li><mat-icon>star</mat-icon></li>
+                <mat-icon>star_half</mat-icon>
+                <button mat-button class="bg-primary text-white" (click)="addToCard(product)">Add To Card</button>
+          
+            
+            </ul>
+            
+        </div>
+       
+    </mat-card>
+    
+</body>
+</html>
+

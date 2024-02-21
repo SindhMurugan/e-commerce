@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <mat-card *ngIf="wishList.length !=0;else emptyWishList" class="card-items">
+    <!-- <div class="mat-card"> -->
+    <div class="upper" *ngFor="let item of wishList">
+      
+        <img [src]="[item.productImageUrl]" alt="">
+       
+        
+        <span>
+          <p style="font-size:14px">{{item.productName | slice:0:50}}...</p>
+         
+          <span class="price-details">
+            <b class="text-danger">&#8377;{{item.productPrice}}</b>
+            <p style="text-decoration: line-through; margin-left: 20px;color:rgb(0, 0, 0,0.3)">&#8377;{{item.productPrice + 100}}</p>
+            <!-- <p style="margin-left:30px;">Qty: {{item.quantity + 1}}</p> -->
+            <b style=" margin-left: 20px;color: rgb(4, 141, 50);">40% Off</b>
+            
+          </span>
+          <!--  <span ></span> -->
+          <div style="display:flex;flex-direction: row;">
+            <select name="demo" id="#" disabled>
+            <option selected="selected" value="one">Qty: 1</option>
+            </select>
+
+            <ul class="rating">
+            
+              <li><mat-icon>star</mat-icon></li>
+              <li><mat-icon>star</mat-icon></li>
+              <li><mat-icon>star</mat-icon></li>
+              <li><mat-icon>star</mat-icon></li>
+              <mat-icon>star_half</mat-icon>
+             
+        
+          
+          </ul>
+        </div>
+         
+          
+            <span class="offer"><mat-icon style="font-size: 15px;">check_circle_outline</mat-icon><p>Offer Applied</p></span>
+            <div style="
+                margin-left: -75px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            ">
+       
+              <button  mat-button style="margin-left: 70px;" (click)="removeItem(item)"><mat-icon style="font-size: 20px;" >delete_outline</mat-icon>Remove
+              </button>
+              
+              <button  mat-button style="margin-right: 70px;" class="wishlist " (click)="addToCard(item)"><mat-icon  style="font-size: 20px;">add_shopping_cart</mat-icon>Move to card</button>
+            </div>
+            <!-- <button  mat-button style="margin-left: 70px;"><mat-icon style="font-size: 15px;">check_circle_outline</mat-icon><p></p>Offer Applied
+            </button> -->
+            
+        </span>
+       
+        
+      </div>
+     
+        
+
+   
+</mat-card>
+
+<ng-template #emptyWishList>
+  <div  class="empty-wish">
+    <mat-icon>favorite_border</mat-icon>
+    <p>Your wish list is empty </p>
+  </div>
+</ng-template>
+
+</body>
+</html>

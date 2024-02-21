@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.tool-bar{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid  rgb(0,0,0,0.2);;
+    border-bottom: 1px solid rgb(0,0,0,0.2);
+    color: black;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.menu-items{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+button{
+    font-size: 14px;
+    font-weight:200;
+}
+
+.mat-button:hover{
+    background-color:  rgb(255, 255, 255);
+    /* color: rgb(255, 0, 0); */
+}
+.badge{
+    color: rgb(255, 255, 255);
+    background-color: red;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top:-12px;
+    left:-7px;
+    border-radius: 50px;
+   display: inline-block;
+   font-size: 13px;
+   padding-top: 3px;
+}
+
+ .container{
+    width: 300px;
+    height: 350px;
+    top:60px;
+    right: 0px;
+    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    background-color:  rgb(255, 255, 255);
+    overflow-y: auto;
+    border: 2px solid rgb(149, 149, 149,0.3);
+   
+   
+}
+.card-container{
+    width: 280px;
+    height: fit-content;
+    overflow: hidden;
+    position: relative;
+    /* display: flex;
+    flex-direction: column; */
+    
+    
+   
+}
+
+.left{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+    border-bottom: 1.5px solid rgb(0, 0, 0);
+    font-size: 12px;
+    width: fit-content;
+   
+}
+
+.left img{
+    height: 70px;
+    width: 100px;
+    margin:20px
+}
+
+.remove-all{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px ;
+}
+
+.product-details{
+    margin-left: 155px;
+    margin-top: -100px;
+    width: 119px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly;  */
+   
+
+}
+.rating{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    color: rgb(255, 213, 24);
+}
+.rating mat-icon{
+    font-size: 18px;
+}
+.price-details{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.price-details span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.price-details span button{
+    padding: 5px;
+    border: 1px solid yellow;
+    font-weight: 500;
+}
+
+
+input.search-file-styles {
+    padding: 0px 0px 0px 40px;
+    font-size: 14px;
+    background: transparent
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+      no-repeat 13px center;
+      border-radius: 20px;
+  }
+
+
+
